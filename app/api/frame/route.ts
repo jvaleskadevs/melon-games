@@ -12,7 +12,7 @@ import { Errors } from '../../errors';
 
 init(process.env.NEXT_PUBLIC_AIRSTACK_API_KEY ?? '');
 
-async function getResponse(req: NextRequest): Promise<NextResponse> {
+async function getResponse(req: NextRequest): Promise<NextResponse> { 
   const body: ValidateFramesMessageInput = await req.json();
   const { isValid, message } = await validateFramesMessage(body);
   
@@ -21,34 +21,28 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   const fid: number | undefined = message?.data?.fid || undefined;
   const action = message?.data?.frameActionBody || undefined;
   
-  console.log(toHex(action?.castId?.hash ?? ''));
+  //console.log(toHex(action?.castId?.hash ?? ''));
+  //const text = action?.inputText?.[0] || '';
   
-  const text = action?.inputText?.[0] || '';
- 
+  /*
   if (action?.buttonIndex === 1) {
     console.log(fid);
   }
+  */
+  
+  const imageIndex: string = req.nextUrl.searchParams.get('img') ?? '0';
  
   return new NextResponse(getFrameHtmlResponse({
     buttons: [
       {
-        label: 'Press me'
-      },
-      {
-        action: 'link',
-        label: 'View J. Valeska',
-        target: 'https://warpcast.com/@j-valeska'
+        label: 'Play'
       }
     ],
     image: {
-      src: `${URL}/intro.png`,
+      src: `${URL}/game_${imageIndex}.jpg`,
       aspectRatio: '1:1'
     },
-    postUrl: `${URL}/api/frame`/*,
-    state: {
-      page: 0,
-      time: new Date().toISOString()
-    }*/
+    postUrl: `${URL}/api/frame`
   }));
 }
 
