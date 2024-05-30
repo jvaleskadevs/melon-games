@@ -18,8 +18,8 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   
   if (!isValid) return new NextResponse(Errors.NoValidMessage);
 
-  const fid: number | undefined = message?.data?.fid || undefined;
-  const action = message?.data?.frameActionBody || undefined;
+  //const fid: number | undefined = message?.data?.fid || undefined;
+  //const action = message?.data?.frameActionBody || undefined;
   
   //console.log(toHex(action?.castId?.hash ?? ''));
   //const text = action?.inputText?.[0] || '';

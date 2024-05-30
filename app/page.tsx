@@ -26,7 +26,7 @@ export async function generateMetadata(
     ],
     image: { 
       src: image, 
-      aspectRatio: '1:1' 
+      aspectRatio: '1.91:1' 
     },
     //input: { text: 'Some text' },
     postUrl: `${URL}/api/frame?img=${imageIndex}`
