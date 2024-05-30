@@ -14,13 +14,14 @@ init(process.env.AIRSTACK_API_KEY ?? '');
 
 async function getResponse(req: NextRequest): Promise<NextResponse> { 
   console.log('enter');
-  const body: ValidateFramesMessageInput = await req.json();
-  const { isValid, message } = await validateFramesMessage(body);
+  try {
+    const body: ValidateFramesMessageInput = await req.json();
+    const { isValid, message } = await validateFramesMessage(body);
+  } catch (err) {
+    console.log(err);
+  }
   
-  console.log(isValid);  
-  console.log(message);
-  
-  if (!isValid) return new NextResponse(Errors.NoValidMessage);
+  //if (!isValid) return new NextResponse(Errors.NoValidMessage);
 
   //const fid: number | undefined = message?.data?.fid || undefined;
   //const action = message?.data?.frameActionBody || undefined;
