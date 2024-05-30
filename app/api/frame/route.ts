@@ -13,16 +13,14 @@ import { Errors } from '../../errors';
 init(process.env.AIRSTACK_API_KEY ?? '');
 
 async function getResponse(req: NextRequest): Promise<NextResponse> { 
-  console.log('enter');
   try {
     const body: ValidateFramesMessageInput = await req.json();
     const { isValid, message } = await validateFramesMessage(body);
+    if (!isValid) return new NextResponse(Errors.NoValidMessage);
   } catch (err) {
     console.log(err);
   }
   
-  //if (!isValid) return new NextResponse(Errors.NoValidMessage);
-
   //const fid: number | undefined = message?.data?.fid || undefined;
   //const action = message?.data?.frameActionBody || undefined;
   
@@ -36,7 +34,6 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   */
   
   const imageIndex: string = req.nextUrl.searchParams.get('img') ?? '0';
-  console.log(imageIndex);
  
   return new NextResponse(getFrameHtmlResponse({
     buttons: [
