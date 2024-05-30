@@ -45,7 +45,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
       src: `${URL}/game_${imageIndex}.jpg`,
       aspectRatio: '1:1'
     },
-    postUrl: `${URL}/api/frame`
+    postUrl: `${URL}/api/frame?img=${imageIndex}`
   }));
 }
 
