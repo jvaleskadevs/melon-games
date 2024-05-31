@@ -7,8 +7,8 @@ import {
   ValidateFramesMessageOutput,
 } from '@airstack/frames';
 import { toHex } from 'viem';
-import { URL } from '../../config';
-import { Errors } from '../../errors';
+import { URL } from '../../../config';
+import { Errors } from '../../../errors';
 
 init(process.env.AIRSTACK_API_KEY ?? '');
 

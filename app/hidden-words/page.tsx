@@ -1,6 +1,6 @@
 import { getFrameMetadata } from '@coinbase/onchainkit/frame';
 import type { Metadata, ResolvingMetadata } from 'next';
-import { URL } from './config';
+import { URL } from '../config';
 
 type Props = {
   params: { img: string },
