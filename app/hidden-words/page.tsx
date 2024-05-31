@@ -29,7 +29,7 @@ export async function generateMetadata(
       aspectRatio: '1.91:1' 
     },
     //input: { text: 'Some text' },
-    postUrl: `${URL}/api/frame?img=${imageIndex}`
+    postUrl: `${URL}/api/frame/hidden-words?img=${imageIndex}`
   });
   
   return {
