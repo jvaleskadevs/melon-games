@@ -33,7 +33,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   }
   */
   
-  const imageIndex: string = req.nextUrl.searchParams.get('img') ?? '0';
+  const imageIndex: string = req.nextUrl.searchParams.get('img') ?? '69';
  
   return new NextResponse(getFrameHtmlResponse({
     buttons: [
@@ -42,7 +42,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
       }
     ],
     image: {
-      src: `${URL}/gb_${imageIndex}.jpg`,
+      src: `${URL}/gb_${imageIndex}.png`,
       aspectRatio: '1:1'
     },
     postUrl: `${URL}/api/frame/guess-block?img=${imageIndex}`
