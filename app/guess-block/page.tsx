@@ -16,7 +16,7 @@ export async function generateMetadata(
   
   const title = 'Melon Games';
   const description = 'Melon Games';
-  const image = `${URL}/hidden_words.jpg`;
+  const image = `${URL}/guess_block.jpg`;
 
   const frameMetadata = getFrameMetadata({
     buttons: [
