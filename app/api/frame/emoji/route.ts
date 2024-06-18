@@ -43,7 +43,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     ],
     image: {
       src: `${URL}/emoji_${imageIndex}.jpg`,
-      aspectRatio: '1:91:1'
+      aspectRatio: '1.91:1'
     },
     postUrl: `${URL}/api/frame/emoji?img=${imageIndex}`
   }));
