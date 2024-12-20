@@ -1,7 +1,7 @@
 {
-  "name": "jframe",
+  "name": "melon-games",
   "version": "1.0.0",
-  "description": "Basic Frame by J.",
+  "description": "Melon games is a very basic frame hosting all melon games in farcaster.",
   "author": "@j-valeska",
   "license": "MIT",
   "private": true,
