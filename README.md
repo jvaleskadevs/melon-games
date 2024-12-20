@@ -1,4 +1,4 @@
-# Melong Games
+# Melon Games
 
 Melon games is a very basic frame hosting all melon games in farcaster.
 
@@ -10,7 +10,7 @@ There are some differet games, one per api route, and some different rounds of e
 
 Clone the repo:
 ```
-git clone https://github.com/jvaleskadevs/words-frame.git
+git clone https://github.com/jvaleskadevs/melon-games.git
 ```
 
 Install dependencies
@@ -22,3 +22,7 @@ Run the frame:
 ```
 yarn dev
 ```
+
+## Authors
+
+- [@jvaleska](https://github.com/jvaleskadevs.png) ([warpcast](https://warpcast.com/jvaleska.eth))
